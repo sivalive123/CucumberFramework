@@ -22,12 +22,15 @@ public class LoginSteps {
 
     public LoginSteps(TestContext context) {
         testContext = context;
-        loginPage = testContext.getPageObjectManager().getLoginPage();
+        homePage = new HomePage(testContext.getDriverManager().getDriver());
+
+        loginPage =new LoginPage(testContext.getDriverManager().getDriver());
     }
     
 
 
-    @Then("Login page is displayed")
+
+	@Then("Login page is displayed")
     public void loginPageIsDisplayed() {
         Assert.assertTrue(loginPage.emailLoginPageIsDisplayed());
         

@@ -4,6 +4,8 @@ import PageObjects.HomePage;
 import PageObjects.LoginPage;
 import Utilities.TestContext;
 import io.cucumber.java.en.When;
+
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 public class CartSteps {
@@ -14,7 +16,7 @@ public class CartSteps {
 
     public CartSteps(TestContext context) {
         testContext = context;
-        homePage = testContext.getPageObjectManager().getHomePage();
+        homePage = new HomePage(testContext.getDriverManager().getDriver());
         loginPage = testContext.getPageObjectManager().getLoginPage();
     }
 

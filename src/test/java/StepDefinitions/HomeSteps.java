@@ -13,7 +13,7 @@ public class HomeSteps {
 
     public HomeSteps(TestContext context) {
         testContext = context;
-        homePage = testContext.getPageObjectManager().getHomePage();
+        homePage = new HomePage(testContext.getDriverManager().getDriver());
     }
 
     @Given("Home page without authorizations")
