@@ -5,15 +5,7 @@
 ## Project Purpose
 This project aims to give an inspiring or sample of automation test framework that uses Selenium and Cucumber with Java as the programming language.
 
-You can see pieces of framework components that build on every git branch.
-For example, you want to see how `Hooks` is implemented in the framework.
-Just select the `Hooks` branch then you will see the magic.
 
-![select branch](https://github.com/yazidisme/image-attachment/blob/master/seleniumcucumberframework1.png)
-
-If you want to go back to the current branch, you can select `main` as the default branch.
-
----
 
 ## Tools and Libraries
 This project using 2 main tools, Selenium and Cucumber.
