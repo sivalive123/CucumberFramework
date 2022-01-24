@@ -1,7 +1,7 @@
-package dataproviders;
+package DataProviders;
 
-import enums.DriverType;
-import enums.EnvironmentType;
+import Enums.DriverType;
+import Enums.EnvironmentType;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -83,5 +83,17 @@ public class ConfigFileReader {
             default:
                 throw new RuntimeException("Environment type key value in configuration file is not matched: " + environmentName);
         }
+        
+        
     }
+    
+    
+    public static void main(String[] args) {
+		ConfigFileReader configFileReader=new ConfigFileReader();
+		System.out.println(configFileReader.properties.getProperty("browser"));
+		
+	}
+   
+    
+    
 }

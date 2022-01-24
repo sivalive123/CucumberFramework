@@ -1,10 +1,14 @@
-package stepdefinitions;
+package StepDefinitions;
 
-import pageobjects.LoginPage;
-import utilities.TestContext;
+import PageObjects.HomePage;
+import PageObjects.LoginPage;
+import Utilities.TestContext;
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import java.util.List;
@@ -14,15 +18,20 @@ public class LoginSteps {
 
     TestContext testContext;
     LoginPage loginPage;
+    HomePage homePage;
 
     public LoginSteps(TestContext context) {
         testContext = context;
         loginPage = testContext.getPageObjectManager().getLoginPage();
     }
+    
+
 
     @Then("Login page is displayed")
     public void loginPageIsDisplayed() {
         Assert.assertTrue(loginPage.emailLoginPageIsDisplayed());
+        
+        
 
         String actualLoginHeaderTitle = loginPage.getLoginHeaderTitle();
         Assert.assertEquals("Silakan masuk ke akun Anda", actualLoginHeaderTitle);
@@ -67,4 +76,9 @@ public class LoginSteps {
     public void clickSelanjutnyaButton() {
         loginPage.clickSelanjutnyaButton();
     }
+    
+    
+    
+  
+
 }

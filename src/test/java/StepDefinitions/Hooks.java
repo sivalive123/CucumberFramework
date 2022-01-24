@@ -1,14 +1,19 @@
-package stepdefinitions;
+package StepDefinitions;
 
-import managers.FileReaderManager;
-import utilities.TestContext;
+import Managers.FileReaderManager;
+import Utilities.TestContext;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
 
 public class Hooks {
 
@@ -23,9 +28,12 @@ public class Hooks {
     public void setUp() {
         webDriver = testContext.getDriverManager().getDriver();
         webDriver.get(FileReaderManager.getInstance().getConfigFileReader().getUrl());
+        Capabilities cap = ((RemoteWebDriver) webDriver).getCapabilities();
+		String address = cap.getCapability("goog:chromeOptions").toString();
+		System.out.println("Debugg" + address);
     }
 
-    @After
+   @After
     public void tearDown(Scenario scenario) {
 
         if(scenario.isFailed()) {
