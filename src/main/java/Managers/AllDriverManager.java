@@ -27,25 +27,25 @@ public class AllDriverManager {
 
 	private WebDriver createLocalDriver() {
 		switch (driverType) {
-		case CHROME:
-			WebDriverManager.chromedriver().setup();
-			ChromeOptions chromeOptions = new ChromeOptions();
-			chromeOptions.setExperimentalOption("debuggerAddress", "localhost:53177");
-			System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
-			webDriver = new ChromeDriver(chromeOptions);
-			break;
-		case FIREFOX:
-			WebDriverManager.firefoxdriver().setup();
-			FirefoxOptions firefoxOptions = new FirefoxOptions();
-			webDriver = new FirefoxDriver(firefoxOptions);
-			break;
-		case EDGE:
-			WebDriverManager.edgedriver().setup();
-			webDriver = new EdgeDriver();
-			break;
-		case SAFARI:
-			webDriver = new SafariDriver();
-			break;
+			case CHROME:
+				WebDriverManager.chromedriver().setup();
+				ChromeOptions chromeOptions = new ChromeOptions();
+				// chromeOptions.setExperimentalOption("debuggerAddress", "localhost:53177");
+				System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
+				webDriver = new ChromeDriver(chromeOptions);
+				break;
+			case FIREFOX:
+				WebDriverManager.firefoxdriver().setup();
+				FirefoxOptions firefoxOptions = new FirefoxOptions();
+				webDriver = new FirefoxDriver(firefoxOptions);
+				break;
+			case EDGE:
+				WebDriverManager.edgedriver().setup();
+				webDriver = new EdgeDriver();
+				break;
+			case SAFARI:
+				webDriver = new SafariDriver();
+				break;
 		}
 		long time = FileReaderManager.getInstance().getConfigFileReader().getTime();
 
@@ -61,12 +61,12 @@ public class AllDriverManager {
 
 	private WebDriver createDriver() {
 		switch (environmentType) {
-		case LOCAL:
-			webDriver = createLocalDriver();
-			break;
-		case REMOTE:
-			webDriver = createRemoteDriver();
-			break;
+			case LOCAL:
+				webDriver = createLocalDriver();
+				break;
+			case REMOTE:
+				webDriver = createRemoteDriver();
+				break;
 		}
 		return webDriver;
 	}
