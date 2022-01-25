@@ -2,19 +2,19 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="30253" started-at="2022-01-24T21:39:57 IST" finished-at="2022-01-24T21:40:28 IST">
+  <suite name="Default suite" duration-ms="43628" started-at="2022-01-25T11:46:40 IST" finished-at="2022-01-25T11:47:24 IST">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.TestRunner@6121c9d6]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="Default test" duration-ms="30253" started-at="2022-01-24T21:39:57 IST" finished-at="2022-01-24T21:40:28 IST">
+    <test name="Default test" duration-ms="43628" started-at="2022-01-25T11:46:40 IST" finished-at="2022-01-25T11:47:24 IST">
       <class name="Runners.TestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:Runners.TestRunner@6121c9d6]" name="setUpClass" is-config="true" duration-ms="548" started-at="2022-01-24T21:39:57 IST" finished-at="2022-01-24T21:39:58 IST">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:Runners.TestRunner@6121c9d6]" name="setUpClass" is-config="true" duration-ms="562" started-at="2022-01-25T11:46:40 IST" finished-at="2022-01-25T11:46:41 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.TestRunner@6121c9d6]" name="runScenario" duration-ms="19954" started-at="2022-01-24T21:39:58 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-01-24T21:40:18 IST">
+        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.TestRunner@6121c9d6]" name="runScenario" duration-ms="27855" started-at="2022-01-25T11:46:41 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-01-25T11:47:09 IST">
           <params>
             <param index="0">
               <value>
@@ -38,18 +38,18 @@ at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invok
 at com.sun.proxy.$Proxy20.isDisplayed(Unknown Source)
 at PageObjects.HomePage.getInvalidLocators(HomePage.java:68)
 at StepDefinitions.HomeSteps.thisIsForInvalidLocators(HomeSteps.java:32)
-at ✽.This is for invalid locators(file:///Users/siva-7333/git/selenium-cucumber-framework/src/test/resources/features/CartTests.feature:10)
+at ✽.This is for invalid locators(file:///Users/siva-7333/git/selenium-cucumber-framework/src/test/resources/features/CartTests.feature:7)
 Caused by: org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression //*[invalid locators] because of the following error:
 SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[invalid locators]' is not a valid XPath expression.
-  (Session info: chrome=97.0.4692.71)
+  (Session info: chrome=97.0.4692.99)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'siva-7333', ip: 'fe80:0:0:0:1873:f1c4:85f9:ad22%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '1.8.0_261'
+System info: host: 'siva-7333', ip: 'fe80:0:0:0:185e:cad0:de71:5a33%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '1.8.0_261'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.71, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a...}, goog:chromeOptions: {debuggerAddress: localhost:53177}, javascriptEnabled: true, pageLoadStrategy: normal, platform: ANY, platformName: ANY, proxy: Proxy(), setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: f2aa9af024ac2c25b119bc3d0068c9d9
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: /var/folders/4d/ndyswhcd1_z...}, goog:chromeOptions: {debuggerAddress: localhost:63743}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 3b66c510b72178affab6b3205aaaf056
 *** Element info: {Using=xpath, value=//*[invalid locators]}
-at sun.reflect.GeneratedConstructorAccessor17.newInstance(Unknown Source)
+at sun.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
 at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
 at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
@@ -125,7 +125,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:Runners.TestRunner@6121c9d6]" name="tearDownClass" is-config="true" duration-ms="9708" started-at="2022-01-24T21:40:18 IST" finished-at="2022-01-24T21:40:28 IST">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:Runners.TestRunner@6121c9d6]" name="tearDownClass" is-config="true" duration-ms="15170" started-at="2022-01-25T11:47:09 IST" finished-at="2022-01-25T11:47:24 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
