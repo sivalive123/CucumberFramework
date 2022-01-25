@@ -17,7 +17,7 @@ public class CartSteps {
     public CartSteps(TestContext context) {
         testContext = context;
         homePage = new HomePage(testContext.getDriverManager().getDriver());
-        loginPage = testContext.getPageObjectManager().getLoginPage();
+		loginPage = new LoginPage(testContext.getDriverManager().getDriver());
     }
 
     @When("Go to cart page without authorizations")

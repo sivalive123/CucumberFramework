@@ -9,68 +9,77 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 public class HomePage {
 
-    public HomePage(WebDriver webDriver) {
-        PageFactory.initElements(new AjaxElementLocatorFactory(webDriver, 15), this);
-    }
+	WebDriver driver;
+	CommonFunctions commonFunctions;
 
-    @FindBy(xpath = "//header//img[@alt='Bhinneka.com']//parent::a")
-    private WebElement headerLogoButton;
+	public HomePage(WebDriver webDriver) {
+		this.driver = webDriver;
+		commonFunctions = new CommonFunctions(webDriver);
+		PageFactory.initElements(new AjaxElementLocatorFactory(webDriver, 15), this);
+	}
 
-    @FindBy(xpath ="//div[contains(@placeholder,'Cari produk asli')]//div//input")
-    private WebElement searchInput;
+	@FindBy(xpath = "//header//img[@alt='Bhinneka.com']//parent::a")
+	private WebElement headerLogoButton;
 
-    @FindBy(xpath = "//a[contains(@href,'/cart')]")
-    private WebElement cartButton;
+	@FindBy(xpath = "//div[contains(@placeholder,'Cari produk asli')]//div//input")
+	private WebElement searchInput;
 
-    @FindBy(xpath = "//img[contains(@src,'bhinneka-logo')]//parent::a//following-sibling::div")
-    private WebElement bhinnekaCopyrightFooter;
+	@FindBy(xpath = "//a[contains(@href,'/cart')]")
+	private WebElement cartButton;
 
-    @FindBy(xpath = "//span[contains(text(),'Login')]//parent::button")
-    private WebElement loginButton;
+	@FindBy(xpath = "//img[contains(@src,'bhinneka-logo')]//parent::a//following-sibling::div")
+	private WebElement bhinnekaCopyrightFooter;
 
-    @FindBy(xpath = "//div[contains(@placeholder,'Cari produk asli')]//div//a")
-    private WebElement searchProductLink;
+	@FindBy(xpath = "//span[contains(text(),'Login')]//parent::button")
+	private WebElement loginButton;
 
-    @FindBy(xpath = "//*[invalid locators]")
-    private WebElement invalidLocators;
+	@FindBy(xpath = "//div[contains(@placeholder,'Cari produk asli')]//div//a")
+	private WebElement searchProductLink;
 
-    public boolean defaultHomePageIsDisplayed() {
-        headerLogoButton.isDisplayed();
-        searchInput.isDisplayed();
-        cartButton.isDisplayed();
-        bhinnekaCopyrightFooter.isDisplayed();
-        return true;
-    }
+	@FindBy(xpath = "//*[invalid locators]")
+	private WebElement invalidLocators;
 
-    public void clickLoginButton() {
-        loginButton.isDisplayed();
-        loginButton.isEnabled();
-        loginButton.click();
-    }
+	public void launchurl() {
+		driver.get("test");
+	}
 
-    public void clickCartButton() {
-        cartButton.isEnabled();
-        cartButton.click();
-    }
+	public boolean defaultHomePageIsDisplayed() {
+		headerLogoButton.isDisplayed();
+		searchInput.isDisplayed();
+		cartButton.isDisplayed();
+		bhinnekaCopyrightFooter.isDisplayed();
+		return true;
+	}
 
-    public void setSearchInput(String product) {
-        searchInput.isEnabled();
-        searchInput.click();
-        searchInput.sendKeys(product);
-    }
+	public void clickLoginButton() {
+		loginButton.isDisplayed();
+		loginButton.isEnabled();
+		loginButton.click();
+	}
 
-    public String getSearchProductLink() {
-        searchProductLink.isDisplayed();
-        return searchProductLink.getText();
-    }
+	public void clickCartButton() {
+		commonFunctions.waitForElement(10, cartButton);
+		commonFunctions.clickOnElement(cartButton);
+	}
 
-    public void getInvalidLocators() {
-        invalidLocators.isDisplayed();
-    }
+	public void setSearchInput(String product) {
+		searchInput.isEnabled();
+		searchInput.click();
+		searchInput.sendKeys(product);
+	}
 
-    public void searchProductData(String product) {
+	public String getSearchProductLink() {
+		searchProductLink.isDisplayed();
+		return searchProductLink.getText();
+	}
 
-        setSearchInput(product);
-        searchInput.sendKeys(Keys.ENTER);
-    }
+	public void getInvalidLocators() {
+		invalidLocators.isDisplayed();
+	}
+
+	public void searchProductData(String product) {
+
+		setSearchInput(product);
+		searchInput.sendKeys(Keys.ENTER);
+	}
 }
